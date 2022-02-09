@@ -1,0 +1,13 @@
+.AuthForm {
+    text-align: center;
+    padding: 5rem;
+}
+
+input {
+    margin-left: 1rem;
+    border-radius: 4px;
+}
+
+input[type=text] {
+    padding: 10px 10px;
+}
