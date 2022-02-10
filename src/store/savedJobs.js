@@ -28,5 +28,14 @@ const savedJobsSlice = createSlice({
     }
 })
 
+
+export const sendSavedJobsData = (newSavedJobsData) => {
+    return async (dispatch) => {
+        const sendRequest = async () => {
+            const response = await fetch ('https://job-app-cf530-default-rtdb.firebaseio.com/users.json')
+        }
+    };
+}
+
 export const savedJobActions = savedJobsSlice.actions;
 export default savedJobsSlice;
