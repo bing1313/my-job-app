@@ -12,13 +12,7 @@ const HomePage = () => {
     const savedNewJobThunk = sendSavedJobsData();
     dispatch(savedNewJobThunk);
 
-    // fetch("/api")
-    //   .then(res => res.json()
-    //   )
-    //   .then((data) => {
-    //     console.log(data.message);
-    //     setTestState(data.message);
-    //   });
+   
   }, []);
 
   return (

@@ -40,7 +40,25 @@ app.post("/api/:name", (req, res) => {
     //     }
     //     ]);
   });
+
+app.post("/addSavedJobs", (req, res) => {
+  const userId = req.body.userId;
+  const jobId = req.body.id;
+  console.log("user id " + userId);
+  const childRef = userRef.child(userId);
   
+  childRef.update({
+    'savedJobs' : jobId
+  }, (error) => {
+    if (error) {
+      console.log("data could not be saved " + error)
+    } else {
+      console.log("data was saved successfully");
+    }
+  } );
+})
+
+
 app.listen(3080, () => {
     console.log('server listening on port 3000');
 })
