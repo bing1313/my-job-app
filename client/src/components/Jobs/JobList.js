@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
 import { Row, Col, Container } from "react-bootstrap";
-import Job from "./Job";
+import JobItem from "./JobItem";
 import classes from "./JobList.module.css";
 import SearchFilter from "../layout/SearchFilter";
 
@@ -53,7 +53,8 @@ const JobList = (props) => {
       <h1>This is saved jobs{savedJobs.length}</h1>
         <Col  xs lg="1" className={classes.jobs}>
           {jobs.map((job) => (
-            <Job
+            <div>
+            <JobItem
               title={job.title}
               key={job.id}
               id={job.id}
@@ -61,7 +62,8 @@ const JobList = (props) => {
               company={job.company}
               showJob={showJobHandler}
             /> 
-           
+            <hr></hr>
+           </div>
           ))}
         </Col>
         <Col className={classes.magnifiedJobCol}>        

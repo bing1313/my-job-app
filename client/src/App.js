@@ -10,7 +10,7 @@ import AuthForm from "./components/AuthForm";
 import HomePage from "./components/HomePage";
 import ProfilePage from "./components/Profile/ProfilePage";
 import JobList from "./components/Jobs/JobList";
-
+import SavedJobsPage from "./components/Jobs/SavedJobsPage";
 
 import { addToSavedJobs } from './store/savedJobs-action';
 import { fetchSavedJobs } from './store/savedJobs-action';
@@ -51,6 +51,9 @@ function App() {
         {!authCtx.isLoggedIn && <Route path="/login" element={<AuthForm />} />}
         {authCtx.isLoggedIn && (
           <Route path="/profile" element={<ProfilePage />} />
+        )}
+        {authCtx.isLoggedIn && (
+          <Route path="/savedJobs" element={<SavedJobsPage />} />
         )}
         <Route path="*" element={<p>Page not found</p>} />
       </Routes>

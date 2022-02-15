@@ -10,5 +10,7 @@
 }
 
 .magnifiedJobCol {
-    padding: 2% 15%;
+    max-width: 700px;
+    min-width: 400px;
+    margin: 30px auto;
 }

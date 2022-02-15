@@ -18,7 +18,7 @@ const savedJobsSlice = createSlice({
       if (!existingItem) {
         state.savedJobs.push({
           id: newJob.id,
-          title: newJob.name,
+          title: newJob.title,
           location: newJob.location,
           company: newJob.company,
         });

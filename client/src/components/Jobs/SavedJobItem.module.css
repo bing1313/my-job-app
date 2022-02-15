@@ -1,0 +1,24 @@
+.jobStyle {
+    padding: 10%;
+    display: inline-block;
+    width: 500px;
+    /* background-color: aqua; */
+}
+
+.applyBtn {
+    display: inline-block;
+}
+.btnDiv {
+    display: inline-block;
+    padding: 30px 50px;
+    
+}
+
+.container {
+   
+    padding: 0% 20%;
+}
+
+.btnStyle {
+    
+}

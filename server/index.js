@@ -59,9 +59,9 @@ app.get("/fetchSavedJobs/:userId", (req, res) => {
       if (snapshot.val()) {
         const jobsList = snapshot.val().savedJobs;
         console.log("snapshot val", snapshot.val().savedJobs);
-        let list = [];
-        jobsList.forEach((x) => list.push({ company: x.company, id: x.id }));
-        return list;
+        // let list = [];
+        // jobsList.forEach((x) => list.push({ company: x.company, id: x.id }));
+        return jobsList;
       } else {
         return null;
       }
