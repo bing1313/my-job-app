@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import Container from 'react-bootstrap/Container';
 
 import classes from './AuthForm.module.css';
-import AuthContext from '../store/auth-content';
+import AuthContext from '../store/auth-context';
 
 const AuthForm = () => {
     const [isLogin, setIsLogin] = useState(true);

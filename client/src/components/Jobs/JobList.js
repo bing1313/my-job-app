@@ -5,6 +5,7 @@ import Job from "./Job";
 import classes from "./JobList.module.css";
 
 const JobList = (props) => {
+  
   const [jobs, setJobs] = useState([]);
   const [shownJob, setShownJob] = useState({}); //default could be the first job
   const savedJobs = useSelector((state) => state.savedJobs.savedJobs);

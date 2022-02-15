@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useCallback } from "react";
+import { useSelector, useDispatch } from 'react-redux';
 
 let logoutTimer;
 
@@ -53,11 +54,14 @@ export const AuthContextProvider = (props) => {
   const userIsLoggedIn = !!token; //changes to boolean
   const [userId, setUserId] = useState(userIdData);
 
+ // const dispatch = useDispatch();
+
   /**
    * removes the token from local storage
    */
   const logoutHandler = useCallback(() => {
     setToken(null);
+    setUserId(null);
     localStorage.removeItem("token");
     localStorage.removeItem("expirationTime");
     localStorage.removeItem("userId");
@@ -73,14 +77,18 @@ export const AuthContextProvider = (props) => {
    */
   const loginHandler = (token, expirationTime, userId) => {
     setToken(token);
+    setUserId(userId);
+    console.log("inside login handler user id" + userId);
     localStorage.setItem("token", token);
     localStorage.setItem("expirationTime", expirationTime);
+    localStorage.setItem("userId", userId);
+
     const remainingTime = calculateRemainingTime(expirationTime);
 
     logoutTimer = setTimeout(logoutHandler, remainingTime);
 
-    localStorage.getItem("userId", userId);
-    setUserId(userId);
+    
+    
   };
 
   /**

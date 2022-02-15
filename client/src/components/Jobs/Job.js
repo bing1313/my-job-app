@@ -1,17 +1,22 @@
 import classes from "./Job.module.css";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { savedJobActions } from "../../store/savedJobs";
-import AuthContext from "../../store/auth-content";
+import AuthContext from "../../store/auth-context";
+
+
 
 const Job = (props) => {
-
   const dispatch = useDispatch();
   const authCtx = useContext(AuthContext);
+  const savedJobsList = useSelector((state) => state.savedJobs.savedJobs);
 
   const { title, company, location, id, showJob } = props;
 
   const addToSavedJobsHandler = () => {
+    console.log("saved jobs handler user id " + authCtx.userUid);
+    console.log("saved jobs in handler " + savedJobsList.length);
+
     dispatch(
       savedJobActions.saveToList({
         id: id,
@@ -20,25 +25,20 @@ const Job = (props) => {
         company: company,
       })
     );
-
-    fetch("/addSavedJobs", {
-      method: "POST",
-      body: JSON.stringify({
-        userId: authCtx.userUid,
-        id: id,
-        title: title,
-        location: location,
-        company: company,
-      }),
-      headers: {
-        "Content-Type": "application/json",
-      },
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        console.log("updated data to database");
-      });
   };
+
+
+
+  // const info = {
+  //   job: {
+  //     id: id,
+  //     title: title,
+  //     location: location,
+  //     company: company
+  //   },
+  //   userId: authCtx.userUid
+  // }
+  // dispatch(addToSavedJobs())
 
   return (
     <div className={classes.jobBox}>

@@ -24,33 +24,13 @@ const savedJobsSlice = createSlice({
         });
       }
     },
+    replaceList(state, action) {
+      state.savedJobs = action.payload.savedJobs;
+    },
   },
 });
 
-export const sendSavedJobsData = () => {
-  return async (dispatch) => {
-    const sendRequest = async () => {
-      const response = await fetch("/api/tom" , {
-        method: "POST",
-        body: JSON.stringify({name: "sam", age: 35}),
-        headers: {
-          'Content-Type': 'application/json'
-          // 'Content-Type': 'application/x-www-form-urlencoded',
-        },
-      });
 
-      if (!response.ok) {
-        throw new Error("Sending Data failed");
-      }
-    };
-
-    try {
-      await sendRequest();
-    } catch (error) {
-      console.log("error in sending Request Method");
-    }
-  };
-};
 
 export const savedJobActions = savedJobsSlice.actions;
 export default savedJobsSlice;

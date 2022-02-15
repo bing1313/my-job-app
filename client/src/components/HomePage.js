@@ -1,25 +1,26 @@
-import { useEffect, useState } from "react";
+
+import { useDispatch, useSelector } from "react-redux";
 import { Container } from "react-bootstrap";
 import classes from "./HomePage.module.css";
-import { useDispatch } from "react-redux";
-import { sendSavedJobsData } from "../store/savedJobs";
+
+import AuthContext from "../store/auth-context";
+import { sendSavedJobsData } from "../store/savedJobs-action";
+import { fetchSavedJobs } from "../store/savedJobs-action";
+
 
 const HomePage = () => {
-  const [testState, setTestState] = useState("");
-  const dispatch = useDispatch();
 
-  useEffect(() => {
-    const savedNewJobThunk = sendSavedJobsData();
-    dispatch(savedNewJobThunk);
+  const savedJobsList = useSelector((state) => state.savedJobs.savedJobs);
+  console.log("savedJobs" + savedJobsList.length);
 
-   
-  }, []);
+
 
   return (
     <section className={classes.heading}>
       <Container>
         <h1>This is the home page</h1>
-        {testState}
+      
+        {JSON.stringify(savedJobsList)}
       </Container>
     </section>
   );
