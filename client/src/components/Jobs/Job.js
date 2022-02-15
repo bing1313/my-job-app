@@ -1,9 +1,9 @@
 import classes from "./Job.module.css";
-import { useContext, useEffect } from "react";
+import { useContext } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { savedJobActions } from "../../store/savedJobs";
 import AuthContext from "../../store/auth-context";
-
+import SaveButton from "../layout/SaveButton";
 
 
 const Job = (props) => {
@@ -28,19 +28,8 @@ const Job = (props) => {
   };
 
 
-
-  // const info = {
-  //   job: {
-  //     id: id,
-  //     title: title,
-  //     location: location,
-  //     company: company
-  //   },
-  //   userId: authCtx.userUid
-  // }
-  // dispatch(addToSavedJobs())
-
   return (
+    <div>
     <div className={classes.jobBox}>
       <div onClick={showJob.bind(this, id)}>
         <h3>{title}</h3>
@@ -49,7 +38,9 @@ const Job = (props) => {
           <p key={props.id + location.name}>{location.name}</p>
         ))}
       </div>
-      <button onClick={addToSavedJobsHandler}>save</button>
+     <SaveButton addToSavedJobs={addToSavedJobsHandler}/>
+    </div>
+    <hr></hr>
     </div>
   );
 };

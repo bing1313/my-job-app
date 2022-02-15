@@ -1,7 +1,14 @@
 .jobs {
-    width: 200px;
+    width: 500px;
+    min-width: 500px;
+    /* min-width: 500px;
+    max-width: 500px;    */
 }
 
 .row {
     padding-top: 100px;
+}
+
+.magnifiedJobCol {
+    padding: 2% 15%;
 }

@@ -3,6 +3,7 @@ import { useSelector } from "react-redux";
 import { Row, Col, Container } from "react-bootstrap";
 import Job from "./Job";
 import classes from "./JobList.module.css";
+import SearchFilter from "../layout/SearchFilter";
 
 const JobList = (props) => {
   
@@ -44,11 +45,13 @@ const JobList = (props) => {
 
   return (
     <div>
+    
       <Container fluid>
-        
+      
       <Row className={classes.row}>
+      <SearchFilter />
       <h1>This is saved jobs{savedJobs.length}</h1>
-        <Col className={classes.jobs}>
+        <Col  xs lg="1" className={classes.jobs}>
           {jobs.map((job) => (
             <Job
               title={job.title}
@@ -57,10 +60,11 @@ const JobList = (props) => {
               location={job.location}
               company={job.company}
               showJob={showJobHandler}
-            />
+            /> 
+           
           ))}
         </Col>
-        <Col>        
+        <Col className={classes.magnifiedJobCol}>        
           <div dangerouslySetInnerHTML={{ __html: shownJob.content }}></div>
         </Col>
       </Row>
