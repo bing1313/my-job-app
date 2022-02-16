@@ -1,13 +1,45 @@
 .AuthForm {
     text-align: center;
     padding: 5rem;
+    margin-top: 10%;
 }
 
 input {
     margin-left: 1rem;
     border-radius: 4px;
+    padding: 15px 15px;
+    width: 30%;
 }
 
 input[type=text] {
-    padding: 10px 10px;
+   
+    margin-bottom: 50px;
+
+}
+
+.btnDiv {
+    margin-top: 30px;
+}
+
+.btnDiv button {
+    border-style: none;
+}
+
+.mainBtn {
+    border-radius: 50px;
+    padding: 10px 40px;
+    margin-bottom: 20px;
+}
+
+.altBtn {
+    color: rgb(108, 108, 108);
+    background-color: white;
+}
+
+form div {
+    margin-bottom: 20px;
+}
+
+form {
+    margin: 20px 10%;
 }

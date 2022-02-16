@@ -60,17 +60,16 @@ const AuthForm = () => {
             <Container className={classes.AuthForm}>
              <h1>{isLogin ? "Login" : "Sign Up"}</h1>
             <form>
-                <div>
-                    <label htmlFor="email">Email: </label>
-                    <input id="email" type="email" ref={emailInputRef}></input>
+                <div className={classes.emailDiv}>
+                    <input id="email" type="email" ref={emailInputRef} placeholder="Email" ></input>
                 </div>
-                <div>
-                    <label htmlFor="password">Password: </label>
-                    <input id="password" type="password" required ref={passwordInputRef} ></input>
+                <div className={classes.passDiv}>
+            
+                    <input id="password" type="password" required ref={passwordInputRef} placeholder="Password" ></input>
                 </div>
-                <div>
-                    <button onClick={submitHandler}>{isLogin ? "Login" : "Create Account"}</button>
-                    <button onClick={switchAuthModelHandler}>{isLogin ? "Create new account" : "Log in with existing account"}</button>
+                <div className={classes.btnDiv}>
+                    <button className={classes.mainBtn}onClick={submitHandler}>{isLogin ? "Login" : "Create Account"}</button><br/>
+                    <button className={classes.altBtn} onClick={switchAuthModelHandler}>{isLogin ? "Create new account" : "Log in with existing account"}</button>
                 </div>
                 
             </form>
