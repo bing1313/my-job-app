@@ -11,7 +11,7 @@ import HomePage from "./components/HomePage";
 import ProfilePage from "./components/Profile/ProfilePage";
 import JobList from "./components/Jobs/JobList";
 import SavedJobsPage from "./components/Jobs/SavedJobsPage";
-
+import JobDetail from "./components/Jobs/JobDetail";
 import { addToSavedJobs } from './store/savedJobs-action';
 import { fetchSavedJobs } from './store/savedJobs-action';
 let isInitial = true;
@@ -55,6 +55,7 @@ function App() {
         {authCtx.isLoggedIn && (
           <Route path="/savedJobs" element={<SavedJobsPage />} />
         )}
+        <Route path="/savedJobs/:jobId" element={<JobDetail />} />
         <Route path="*" element={<p>Page not found</p>} />
       </Routes>
     </Layout>

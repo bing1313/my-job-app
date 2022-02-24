@@ -1,12 +1,17 @@
-.jobs {
+.jobsCol {
     width: 500px;
     min-width: 500px;
+    margin-left: 50px;
+   
+    overflow-y: scroll;
+    height: 2000px;
     /* min-width: 500px;
     max-width: 500px;    */
 }
 
 .row {
-    padding-top: 100px;
+    padding-top: 10px;
+    
 }
 
 .magnifiedJobCol {

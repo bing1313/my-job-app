@@ -61,11 +61,11 @@ const AuthForm = () => {
              <h1>{isLogin ? "Login" : "Sign Up"}</h1>
             <form>
                 <div className={classes.emailDiv}>
-                    <input id="email" type="email" ref={emailInputRef} placeholder="Email" ></input>
+                    <input className={classes.authInput} id="email" type="email" ref={emailInputRef} placeholder="Email" ></input>
                 </div>
                 <div className={classes.passDiv}>
             
-                    <input id="password" type="password" required ref={passwordInputRef} placeholder="Password" ></input>
+                    <input className={classes.authInput} id="password" type="password" required ref={passwordInputRef} placeholder="Password" ></input>
                 </div>
                 <div className={classes.btnDiv}>
                     <button className={classes.mainBtn}onClick={submitHandler}>{isLogin ? "Login" : "Create Account"}</button><br/>

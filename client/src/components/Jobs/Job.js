@@ -1,11 +1,7 @@
 import classes from "./Job.module.css";
 
-
-
 const Job = (props) => {
  
-
-
   return (
     <div className={props.jobStyle}>
       <div onClick={props.showJob.bind(this, props.id)}>

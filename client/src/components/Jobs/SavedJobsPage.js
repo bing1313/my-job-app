@@ -3,7 +3,7 @@ import SavedJobItem from "./SavedJobItem";
 
 const SavedJobsPage = () => {
   const savedJobs = useSelector((state) => state.savedJobs.savedJobs);
-  console.log("in savedJObspage" + savedJobs[0].company);
+  //console.log("in savedJObspage" + savedJobs[0].company);
   const redirectToJobsHandler = () => {};
 
   return (

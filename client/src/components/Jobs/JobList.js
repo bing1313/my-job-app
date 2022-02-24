@@ -4,6 +4,7 @@ import { Row, Col, Container } from "react-bootstrap";
 import JobItem from "./JobItem";
 import classes from "./JobList.module.css";
 import SearchFilter from "../layout/SearchFilter";
+import JobHeader from "../layout/JobHeader";
 
 const JobList = (props) => {
   
@@ -45,13 +46,10 @@ const JobList = (props) => {
 
   return (
     <div>
-    
+    <SearchFilter />
       <Container fluid>
-      
       <Row className={classes.row}>
-      <SearchFilter />
-      <h1>This is saved jobs{savedJobs.length}</h1>
-        <Col  xs lg="1" className={classes.jobs}>
+        <Col  xs lg="1" className={classes.jobsCol}>
           {jobs.map((job) => (
             <div>
             <JobItem
@@ -66,7 +64,13 @@ const JobList = (props) => {
            </div>
           ))}
         </Col>
-        <Col className={classes.magnifiedJobCol}>        
+        <Col className={classes.magnifiedJobCol}>
+            <JobHeader 
+              title={shownJob.title}
+              id={shownJob.id}
+              location={shownJob.location}
+              company={shownJob.company}
+            />
           <div dangerouslySetInnerHTML={{ __html: shownJob.content }}></div>
         </Col>
       </Row>

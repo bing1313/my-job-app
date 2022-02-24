@@ -26,7 +26,7 @@ const MainNavigation = () => {
           {isLoggedIn && <Nav.Link as={Link} to="/profile">Profile</Nav.Link>}
           {isLoggedIn && <Nav.Link as={Link} to="/savedJobs">Saved</Nav.Link>}
           {isLoggedIn && <button onClick={logoutHandler}>Logout</button>}
-          
+          {/* <Nav.Link as={Link} to="/job-detail/:jobId">Job Detail</Nav.Link> */}
         </Nav>
         </Navbar.Collapse>
       </Container>

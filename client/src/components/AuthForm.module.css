@@ -4,18 +4,13 @@
     margin-top: 10%;
 }
 
-input {
+.authInput{
     margin-left: 1rem;
     border-radius: 4px;
     padding: 15px 15px;
     width: 30%;
 }
 
-input[type=text] {
-   
-    margin-bottom: 50px;
-
-}
 
 .btnDiv {
     margin-top: 30px;
